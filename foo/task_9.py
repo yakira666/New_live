@@ -9,9 +9,11 @@
 # print(f'{square(float(input("Введите радиус круга: " ))):.2f}')
 
 # =======================================
-def square(radius):
-    res = 3.14 * radius ** 2
-    return res
+def area_of_circle(radius):
+    PI = 3.14  # константа
+
+    area = PI * radius ** 2
+    return area
 
 
-print(f'{square(float(input("Введите радиус круга: " ))):.2f}')
+print(f'{area_of_circle(float(input("Введите радиус круга: "))):.2f}')  # Молодц!
