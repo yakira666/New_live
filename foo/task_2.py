@@ -1,4 +1,9 @@
-def multiplication_table():
+def multiplication_table() -> str:
+    """
+    Функция выводит таблицу умножения всех числе от 1 до 9
+
+    :return: Возращает таблицу умножения
+    """
     for s_num in range(1, 10):
         print(f'\n{"":-^23}\nТаблица умножения на {s_num}\n{"":-^23}')
         for f_num in range(1, 10):

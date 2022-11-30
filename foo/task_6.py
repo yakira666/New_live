@@ -1,4 +1,11 @@
-def count_vowels_and_consonants(word, vowels):
+def count_vowels_and_consonants(word: str, vowels: str) -> str:
+    """
+    Функция подсчитывает количество гласных и согласных букв в слове
+
+    :param word: Полученое слово для проверки
+    :param vowels: Гласные буквы выбранного языка
+    :return: Возращает количество гласных и согласных букв
+    """
     counter_v = 0
     counter_c = 0
     for ch in word.lower().strip():

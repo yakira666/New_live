@@ -1,4 +1,10 @@
-def up_text(text):
+def up_text(text: str) -> str:
+    """
+    Функция меняет регистр на верхний
+
+    :param text: Любой текст
+    :return: Возращает текст в вехрнем регистре
+    """
     print(f"{text.upper()}")
 
 
