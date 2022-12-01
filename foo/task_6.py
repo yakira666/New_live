@@ -1,4 +1,7 @@
-def count_vowels_and_consonants(word: str, vowels: str) -> str:
+from typing import Union  # импортировано, чтобы разрешить несколько типов параметру vowels
+
+
+def count_vowels_and_consonants(word: str, vowels: Union[str, list, tuple]) -> None:
     """
     Функция подсчитывает количество гласных и согласных букв в слове
 
@@ -27,8 +30,11 @@ choice_lang = {
     2: "eiaouy",
 }
 
+# temp_arg = ['e', 'i', 'a', 'o', 'u', 'y']
+
 if lang in choice_lang:
     vow = choice_lang[lang]
     count_vowels_and_consonants(line, vow)
+    # count_vowels_and_consonants(line, temp_arg)  # если в параметр vowels передать список, ошибок не будет
 else:
     print("Ошибка...")

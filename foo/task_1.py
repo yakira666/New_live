@@ -1,4 +1,4 @@
-def up_text(text: str) -> str:
+def up_text(text: str) -> None:  # Она возвращает None, так как мы не указали return тип строка
     """
     Функция меняет регистр на верхний
 

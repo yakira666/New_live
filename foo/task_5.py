@@ -1,4 +1,4 @@
-def parity(n: int) -> int:
+def parity(n: int) -> None:
     """
     Функция определяет четное число или нет
 

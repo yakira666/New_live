@@ -1,4 +1,4 @@
-def multiplication_table() -> str:
+def multiplication_table() -> None:
     """
     Функция выводит таблицу умножения всех числе от 1 до 9
 

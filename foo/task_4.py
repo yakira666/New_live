@@ -1,7 +1,4 @@
-num = int(input("Введите целое положительное число: "))
-
-
-def factorial(number: int) -> int:
+def factorial(number: int) -> None:
     """
     Функция считает факториал полученного числа
 
@@ -21,4 +18,5 @@ def factorial(number: int) -> int:
         print(f'Факториал числа {number:d} равен {prod:,d}')
 
 
+num = int(input("Введите целое положительное число: "))
 factorial(num)

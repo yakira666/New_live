@@ -12,9 +12,6 @@ def square(radius: float) -> float:
     return res
 
 
-print(f'{square(float(input("Введите радиус круга: "))):.2f}')
-
-
 # =======================================
 def area_of_circle(radius: float) -> float:
     """
@@ -29,8 +26,5 @@ def area_of_circle(radius: float) -> float:
     return area
 
 
+print(f'{square(float(input("Введите радиус круга: "))):.2f}')
 print(f'{area_of_circle(float(input("Введите радиус круга: "))):.2f}')
-
-
-
-

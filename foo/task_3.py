@@ -1,4 +1,4 @@
-def welcome(name: str) -> str:
+def welcome(name: str) -> None:
     """
     Функция приветствует полученного пользователя
 

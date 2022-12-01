@@ -11,3 +11,9 @@ def sum_nums(num: int) -> int:
 
 print(sum_nums(digit)) if (digit := int(input())) >= 0 and len(str(digit)) == 3 else print(
     "Число должно быть трехзначным положительным...")
+
+# Зачем?
+# len(str(digit)) == 3   :(
+
+# Если можно написать так
+# digit in (100, 1000)
