@@ -17,4 +17,3 @@ def nums(first_num: int, second_num: int) -> int:
 
 
 print(nums(int(input("Введите первое число: ")), int(input("Введите второе число: "))))
-# Супер!

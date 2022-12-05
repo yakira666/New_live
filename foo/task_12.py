@@ -5,19 +5,15 @@ def is_prime(num: int) -> bool:
     :param num: Положительное целое число
     :return: Возвращает булевое значение (True если переданное число является простым, и значение False, если переданное число является сложным)
     """
-    for i in range(2, int(num ** 0.5) + 1):  # число нужно преобразовать к типу int
+    for i in range(2, int(num ** 0.5) + 1):
         if num % i == 0:
             return False
     return True
 
 
-# Ошибка, digit всегда будет хранить значения булевого тип (True или False)
-if digit := int(input("Введите положительное целое число: ")) < 0:
-    print(digit)  # попробуй напечатать
+if (digit := int(input("Введите положительное целое число: "))) < 0:
     print("Отрицательные целые числа не могут быть простыми!")
 elif digit in range(0, 2):
-    print(digit)  # попробуй напечатать
     print("0 и 1 не простые числа")
-else:  # Этот блок никогда не сработает
-    print(digit)  # попробуй напечатать
+else:
     print(is_prime(digit))

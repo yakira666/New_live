@@ -9,11 +9,6 @@ def sum_nums(num: int) -> int:
     return res
 
 
-print(sum_nums(digit)) if (digit := int(input())) >= 0 and len(str(digit)) == 3 else print(
+print(sum_nums(digit)) if ((digit := int(input())) >= 0) and (digit in range(100, 1000)) else print(
     "Число должно быть трехзначным положительным...")
 
-# Зачем?
-# len(str(digit)) == 3   :(
-
-# Если можно написать так
-# digit in (100, 1000)

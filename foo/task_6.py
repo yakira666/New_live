@@ -11,6 +11,7 @@ def count_vowels_and_consonants(word: str, vowels: Union[str, list, tuple]) -> N
     """
     counter_v = 0
     counter_c = 0
+    vowels = "".join(vowels)
     for ch in word.lower().strip():
         if ch in vowels.lower().strip():
             counter_v += 1
