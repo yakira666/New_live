@@ -6,3 +6,6 @@ data = {'192.168.1.2': ('CVE-2016-8743', '2.2.32'),
 
 for elem in sorted(data.items(), key=lambda items: list(items[1][1]), reverse=True):
     print(elem)
+
+# Решение рабочее, но это неверное решение по условии задачи.
+# Решение должно быть выполнено в одну строку
