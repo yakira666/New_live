@@ -3,9 +3,4 @@ data = {'192.168.1.2': ('CVE-2016-8743', '2.2.32'),
         '192.168.1.200': ('CVE-2022-23943', '2.4.52'),
         '192.168.1.5': ('CVE-2016-5387', '2.4.23')
         }
-
-for elem in sorted(data.items(), key=lambda items: list(items[1][1]), reverse=True):
-    print(elem)
-
-# Решение рабочее, но это неверное решение по условии задачи.
-# Решение должно быть выполнено в одну строку
+print("\n".join(str(elem)[1:-1] for elem in (sorted(data.items(), key=lambda items: tuple(items[1][1]), reverse=True))))

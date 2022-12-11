@@ -1,4 +1,6 @@
 def library_filling(text: str = "python") -> None:
+    # library = []
+    # library.append(text)
     """
     Функция наполняет библиотеку слов до тех пор пока не встретиться пустая строка или слово которое уже было и
     выводит на экран количество слов в библиотеке
@@ -6,29 +8,18 @@ def library_filling(text: str = "python") -> None:
     :param text: изначальная библиотека слов
     :return: None
     """
-    library.append(text)
-    while (word := input("Укажите любое слово: ")) != "":  # здесь можно упростить
-        #  здесь я бы переделал условия, чтобы не писать блок else
-        if word not in library:
-            library.append(word)
-        else:
+    library = [text]
+    while word := input("Укажите любое слово: "):
+
+        if word in library:
             print(f'Строка {word} уже присутствует в списке на позиции "{library.index(word)}"')
+            break
+        library.append(word)
+    else:
+        print(f"{library}")
 
-    print(f"{library}")
 
-
-library = []  # это список должен быть внутри функции
-
-# и здесь я бы переделал условия и применил оператора моржа
-# убрал лишних методов
-agr = input("Укажите аргумент (необязательное поле): ")
-if agr:
-    library_filling(agr)
-else:
+if not (line := input("Укажите аргумент (необязательное поле): ")):
     library_filling()
-
-# и самая главная ошибка, программа не останавливается после того, как получила слово, которое уже было там
-
-# Условие задачи:
-# если введённая строка уже есть в списке, ЗАВЕРШИТЬ ВВОД и вывести сообщение
-# "Строка s уже присутствует в списке на позиции n"
+else:
+    library_filling(line)
