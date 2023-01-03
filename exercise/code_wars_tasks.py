@@ -12,111 +12,12 @@
 # print(solution(s))
 
 # ===============================================================================================================================================================
-# """
-# Вы, наверное, знаете систему «лайков» из Facebook и других страниц.
-# Люди могут «лайкать» сообщения в блогах, изображения или другие элементы.
-#  Мы хотим создать текст, который должен отображаться рядом с таким элементом.
-#
-# Реализуйте функцию, которая принимает массив, содержащий имена людей,
-# которым понравился элемент. Он должен возвращать отображаемый текст, как показано в примерах:
-#
-# []                                -->  "no one likes this"
-# ["Peter"]                         -->  "Peter likes this"
-# ["Jacob", "Alex"]                 -->  "Jacob and Alex like this"
-# ["Max", "John", "Mark"]           -->  "Max, John and Mark like this"
-# ["Alex", "Jacob", "Mark", "Max"]  -->  "Alex, Jacob and 2 others like this"
-# """
-#
 
-# def likes(names):
-#     end_line = 'likes this'
-#     amount_of_elements = len(names)
-#     if amount_of_elements < 2:
-#         if amount_of_elements == 0:
-#             return f'no one {end_line}'
-#         elif amount_of_elements == 1:
-#             return f'{names[0]} {end_line}'
-#     else:
-#         end_line = "like this"
-#         if amount_of_elements == 2:
-#             return f'{names[0]} and {names[1]} {end_line}'
-#         elif amount_of_elements == 3:
-#             return f'{", ".join(names[:2])} and {names[2]} {end_line}'
-#         else:
-#             return f'{", ".join(names[:2])} and {amount_of_elements-2} others {end_line}'
-#
+
+
 
 # ===============================================================================================================================================================
-# """
-# Панграмма — это предложение, в котором каждая буква алфавита встречается хотя бы по одному разу.
-# Например, предложение «Быстрая коричневая лиса перепрыгивает через ленивую собаку» является панграммой,
-#  потому что в нем хотя бы один раз используются буквы AZ (регистр значения не имеет).
-#
-# Учитывая строку, определите, является ли она панграммой. Возвращает True, если это так,
-# False, если нет. Не обращайте внимания на цифры и знаки препинания."""
-#
-#
-# def is_pangram(s):
-#     special_meanings = set(s.lower())
-#     asccii_char = 96
-#     while True:
-#         asccii_char += 1
-#         if chr(asccii_char) in special_meanings:
-#             continue
-#         else:
-#             break
-#     if asccii_char >= 122:
-#         return True
-#     else:
-#         return False
-#
-#
-# print(is_pangram("Aacdefghijklmnopqrstuvwxyz"))
 
-# ===============================================================================================================================================================
-# """
-# В маленьком городке население p0 = 1000на начало года.
-# Население регулярно увеличивается на 2 percent1 год, и, кроме того , 50
-# каждый год в город приезжают новые жители. Сколько лет нужно городу,
-# чтобы его население было больше или равно количеству p = 1200жителей?
-#
-# At the end of the first year there will be:
-# 1000 + 1000 * 0.02 + 50 => 1070 inhabitants
-#
-# At the end of the 2nd year there will be:
-# 1070 + 1070 * 0.02 + 50 => 1141 inhabitants (** number of inhabitants is an integer **)
-#
-# At the end of the 3rd year there will be:
-# 1141 + 1141 * 0.02 + 50 => 1213
-#
-# It will need 3 entire years.
-# Более общие параметры:
-#
-# p0, percent, aug (inhabitants coming or leaving each year), p (population to equal or surpass)
-#
-# функция nb_yearдолжна возвращать nколичество полных лет, необходимых для получения населения, большего или равного p.
-#
-# aug — целое число, процент — положительное или нулевое плавающее число, p0 и p — положительные целые числа (> 0)
-#
-# Examples:
-# nb_year(1500, 5, 100, 5000) -> 15
-# nb_year(1500000, 2.5, 10000, 2000000) -> 10
-# Примечание:
-# Не забудьте преобразовать параметр процента в процент в теле вашей функции:
-# если параметр процента равен 2, вы должны преобразовать его в 0,02.
-# """
-#
-#
-# def nb_year(p0, percent, aug, p):
-#     starting_strength = int(p0) + (int(p0) * percent / 100) + int(aug)
-#     counter = 1
-#     while 0 < starting_strength < p:
-#         starting_strength = int(starting_strength) + (int(starting_strength) * percent / 100) + int(aug)
-#         counter += 1
-#     return int(counter)
-#
-#
-# print(nb_year(1500, 5, 100, 5000))
 
 # ===============================================================================================================================================================
 # """
