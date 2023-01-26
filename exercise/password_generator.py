@@ -1,32 +1,44 @@
 import random
 
 
-def password(w, length):
-    a = ''
-    p = {
+def show_variant():
+    print(
+        """Выберите пункты необходимых символов для пароля 
+        и введите их через запятую.
+        \n1.Прописные буквы\n2.Цифры
+        \n3.Строчные буквы\n4.Специальные символы\n""")
+
+
+def get_choices():
+    keys = list(set(int(i) for i in input("Введите пункты: ").strip()
+                    if i.isdigit() if int(i) in range(1, 5)))
+    return keys
+
+
+def get_password(keys, length):
+    vars = ''
+    chars = {
         1: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
         2: "1234567890",
         3: "abcdefghijklmnopqrstuvwxyz",
         4: "!@#$%^&*()_",
-
     }
 
-    for i in w:
-        a += p[i]
-    return print(f"\nВаш пароль: "
-                 f"{''.join(random.choice(a) for _ in range(length))}")
+    for key in keys:
+        vars += chars[key]
+    return print(f"\nВаш пароль: {''.join(random.choices(vars, k=length))}")
+
+
+def run():
+    show_variant()
+    choice = get_choices()
+
+    if choice:
+        long_pass = int(input("Введите необходимую длину пароля: "))
+        get_password(choice, long_pass)
+    else:
+        print('\nПопробуйте еще раз выбрать пункты необходимых символов для пароля!')
 
 
 if __name__ == "__main__":
-    key_security = list(
-        set(int(i) for i in input(f"Выберите пункты необходимых символов для пароля и введите их через запятую. "
-                                  f"\n1.Прописные буквы "
-                                  f"\n2.Цифры "
-                                  f"\n3.Строчные буквы "
-                                  f"\n4.Специальные символы\n\nВведите пункты : ").strip() if i.isdigit()))
-    long_pass = int(input("Введите необходимую длину пароля: "))
-
-    if max(key_security) < 5:
-        password(key_security, long_pass)
-    else:
-        print('\nПопробуйте еще раз выбрать пункты необходимых символов для пароля!')
+    run()
