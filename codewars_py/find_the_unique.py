@@ -1,10 +1,10 @@
-def findUniq(arr):
-    for i in range(len(arr)):
+def find_uniq(arr):
+    for i in range(len(arr)):  # в худшем случае N logN + 2
         for j in range(len(arr)):
-            if str(arr[i]).strip() == str(arr[j]).strip() and i != j:
+            if str(arr[i]).strip() == str(arr[j]).strip() and i != j:  # 1
                 break
         else:
-            return arr[i]
+            return arr[i]  # 1
 
 
 if __name__ == '__main__':
@@ -19,4 +19,4 @@ if __name__ == '__main__':
     ]
 
     for item in read_values:
-        print(findUniq(item))
+        print(find_uniq(item))
