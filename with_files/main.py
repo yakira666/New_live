@@ -18,12 +18,12 @@ def read_from_csv(name: str, delimiter: str = ',', encoding: str = 'UTF-8',
         # рабивает по разделителю
         reader: csv = csv.reader(f, delimiter=delimiter)
 
-    if header is not None:
-        next(reader)  # пропускается заголовок
+        if header is not None:
+            next(reader)  # пропускается заголовок
 
-    # добавляет запросы в результирующий список
-    for row in reader:
-        query.append(row)
+        # добавляет запросы в результирующий список
+        for row in reader:
+            query.append(row)
 
     return query
 
