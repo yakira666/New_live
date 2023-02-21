@@ -1,39 +1,46 @@
-# from question import Question
+from question import Question
 
 import json
 import random
 
 
-def reader_json(test: int | str | float = 1):
+def reader_json(filename: str) -> list[dict]:
     """Принимает и обрабатывает json файлы"""
+    with open(file=filename, mode="r", encoding="UTF-8") as jf:
+        context: list[dict] = json.load(jf)
+        return context
 
-    with open("questions.json", "r", encoding="UTF-8") as jf:
-        text = json.load(jf)
-        random.shuffle(text)
-        programm = "Программа: "
-        all_points = 0
-        count_true_answer = 0
-        print("Игра началась!")
-        for el in text:
-            quest = el["q"]
-            lvl = int(el["d"])
-            answer = el["a"]
-            print(f'{programm}Вопрос: {quest}\n{programm}Сложность: {lvl}/5')
-            user_anser = input("Пользователь: ")
-            if user_anser == answer:
-                print(f'{programm}Ответ верный, получено {lvl * 10} баллов')
-                all_points += lvl * 10
-                count_true_answer += 1
-            else:
-                print(f'{programm}Ответ неверный, Верный ответ - {answer}')
-    print(f'{programm}Вот и все!\n{programm}Отвечено на {count_true_answer} вопроса из {len(text)}\n{programm}Набрано: {all_points} баллов')
 
-def main():
-    """Создать 5 экз. класса Question, добавить в список далее перемешать их с помощью шафла"""
+def game():
+    print("Программа: Игра начинается!".center(60, "#"))
 
-    pass
+    context = reader_json("questions.json")  # считываем данные из json
+    random.shuffle(context)  # перемешивание вопросов
+
+    total_points = 0  # общее кол-во баллов
+    count_correct_ans = 0  # кол-во правильных ответов
+    for que in context:
+        q_text = que["q"]
+        lvl = int(que["d"])
+
+        print(Question.build_question(q_text, lvl))  # вызов метода, построение вопроса
+
+        user_input = input("Пользователь (для выхода quit): ")
+        if user_input.lower() == "quit":
+            break
+        obj1 = Question(q_text, lvl, user_input, que["a"])  # создание объекта
+
+        if obj1.is_correct():  # вывод, исходя от ответа пользователя
+            print(obj1.build_positive_feedback(), end='\n\n')
+            count_correct_ans += 1
+            total_points += obj1.get_point()
+        else:
+            print(obj1.build_negative_feedback())
+    print(f"Отвечено {count_correct_ans} вопроса из {len(context)}"
+          f"\nНабрано {total_points} баллов")
+
+    print("До новых встреч!")
 
 
 if __name__ == "__main__":
-    main()
-    reader_json()
+    game()
