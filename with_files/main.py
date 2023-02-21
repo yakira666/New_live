@@ -63,7 +63,7 @@ if __name__ == '__main__':
     #  1. Сколько раз домен попадает в ТОП 20
     #  2. Сколько раз домен попадает в ТОП 10
     #  3. Сколько трафика получает домен с поиска Яндекса
-    data: list[list[str]] = read_from_csv('query.csv', delimiter=';', header=True)
+    data: list[list[str]] = read_from_csv('query_example.csv', delimiter=';', header=True)
     result: dict[int: dict[str: [str, int, list]]] = delat_krasivo(data)
 
     print(json.dumps(result, indent=4, ensure_ascii=False))  # выводит словарь в красивом виде
