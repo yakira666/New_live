@@ -1,6 +1,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,linux,venv,python,pycharm,windows
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,linux,venv,python,pycharm,windows
 
+# files
+query.csv
+
 ### Linux ###
 *~
 
@@ -260,6 +263,7 @@ ENV/
 env.bak/
 venv.bak/
 first_venv/
+telegram_bot_venv/
 
 
 # Spyder project settings
